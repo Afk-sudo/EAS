@@ -1,0 +1,65 @@
+﻿<Window x:Class="EmployeeAccounting.Pages.AdditionalEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeeAccounting.Pages"
+        mc:Ignorable="d"
+        Title="Employee Addition" Height="600" MinWidth="500" Width="500" ResizeMode="NoResize" Foreground="#00c5fa" Background="#100e14" >
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip"
+                Value="{Binding RelativeSource={RelativeSource Self},
+                    Path=(Validation.Errors)[0].ErrorContent}" />
+                    <Setter Property="Background" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+
+        <TextBlock FontSize="20" Height="30" VerticalAlignment="Top" Margin="10">Employee Addition</TextBlock>
+        <Grid Width="Auto" Height="Auto" Margin="20, 50, 20, 20" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="EmployeeName" Grid.Column="1" Height="30" Margin="0 0 15 0" FontSize="16" Text="{Binding Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Background="#1c1c1c" Foreground="#00c5fa"/>
+            <TextBox x:Name="EmployeePhone" MaxLength="11" Grid.Column="1" Grid.Row="1" Height="30"  Margin="0 0 15 0" FontSize="16" Text="{Binding Phone, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Background="#1c1c1c" Foreground="#00c5fa"/>
+            <TextBox x:Name="EmployeeCity" Grid.Column="1" Grid.Row="2" Height="30" Margin="0 0 15 0" FontSize="16" Text="{Binding EmployeeAdress.City, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Background="#1c1c1c" Foreground="#00c5fa"/>
+            <TextBox x:Name="EmployeeStreet" Grid.Column="1" Grid.Row="3" Height="30" Margin="0 0 15 0" FontSize="16" Text="{Binding EmployeeAdress.Street, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Background="#1c1c1c" Foreground="#00c5fa"/>
+            <TextBox x:Name="EmployeeHome" Grid.Column="1" Grid.Row="4" Height="30" Margin="0 0 15 0" FontSize="16" Text="{Binding EmployeeAdress.Home, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Background="#1c1c1c" Foreground="#00c5fa"/>
+            <TextBox x:Name="EmployeeApartmet" Grid.Column="1" Grid.Row="5" Height="30" Margin="0 0 15 0" FontSize="16" Text="{Binding EmployeeAdress.Apartment, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" Background="#1c1c1c" Foreground="#00c5fa"/>
+            <Grid Grid.Column="1" Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <CheckBox x:Name="MaleButton" IsChecked="True" Content="Man" Height="30" FontSize="16" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#00c5fa"/>
+                <CheckBox x:Name="FemaleButton" IsChecked="False" Content="Woman" Height="30" FontSize="16" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#00c5fa" />
+            </Grid>
+
+            <Label Content="Name :" Height="30" FontSize="16" Foreground="#00c5fa"/>
+            <Label Grid.Row="1" Content="Phone :" Height="30" FontSize="16" Foreground="#00c5fa" />
+            <Label Grid.Row="2" Content="City :" Height="30" FontSize="16" Foreground="#00c5fa"/>
+            <Label Grid.Row="3" Content="Street :" Height="30" FontSize="16" Foreground="#00c5fa"/>
+            <Label Grid.Row="4" Content="Home :" Height="30" FontSize="16" Foreground="#00c5fa" />
+            <Label Grid.Row="5" Content="Apartmet :" Height="30" FontSize="16" Foreground="#00c5fa" />
+            <Label Grid.Row="6" Content="Gender :" Height="30" FontSize="16" Loaded="Label_Loaded" Foreground="#00c5fa" />
+            <Button Grid.Column="1" Grid.Row="7" Content="Добавить" FontSize="16" Background="#5eba7d" Width="150" Height="35" Margin="209,14,15,13" Click="Button_Click" Foreground="#FFFF"/>
+
+        </Grid>
+    </Grid>
+</Window>

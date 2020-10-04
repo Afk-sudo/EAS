@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lB2ABq6GW/YTYgX8z6uVWeupeiIXye9bYhF6MxME4oFH+PN2rtrw7tCKva4jK5tUYK8CjbLE4zwOOqxrUxH/EA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AAA\\Documents\\WorldSkils\\EmployeeAccounting\\EmployeeAccounting\\EmployeeAccounting.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AAA\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
